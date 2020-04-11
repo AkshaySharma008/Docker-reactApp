@@ -3,7 +3,7 @@ services:
  - docker
 
 before_install:
- - docker build -t reactApp -f Dockerfile.dev .
+ - docker build -t gitpurush/reactApp -f Dockerfile.dev .
 
 script:
- - docker run reactApp npm run test -- --coverage
+ - docker run -e CI=true gitpurush/reactApp npm run test -- --coverage
